@@ -1,0 +1,31 @@
+Cidade(CodCidade, Nome)
+
+Escola(CodEscola, Nome, CodCidade, CodDiretor)
+	CodCidade referencia Cidade
+	CodDiretor referencia Pessoa
+
+Pessoa(CodPessoa, Nome, Telefone, CodCidade)
+	CodCidade referencia Cidade
+	
+Professor(CodPessoa, RG, CPF, Titulação)
+	CodPessoa referencia Pessoa
+	
+ministra(CodProfessor, CodDisciplina_Ministrada, CodTurma_Ministrada)
+	CodProfessor referencia Pessoa
+	CodDisciplina_Ministrada referencia Disciplina
+	CodTurma_Ministrada referencia Turma
+	
+Disciplina(CodDisciplina, Nome)
+
+Aluno(CodPessoa, Matricula_Aluno, Data_Nascimento, CodTurma)
+	CodPessoa referencia Pessoa
+	CodTurma referencia Turma
+
+Contato(CodAluno, Telefone, CodPessoa)
+	CodAluno referencia Pessoa
+	
+Turma(CodTurma, Nome, CodEscola)
+	CodEscola referencia Escola
+
+
+
